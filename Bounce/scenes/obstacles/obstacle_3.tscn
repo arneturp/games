@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=1]
+
+[ext_resource path="res://scripts/obstacle.gd" type="Script" id=1]
+[ext_resource path="res://assets/textures/obstacle_3.tex" type="Texture" id=2]
+
+[sub_resource type="ConvexPolygonShape2D" id=1]
+
+custom_solver_bias = 0.0
+points = Vector2Array( -253.686, -27.0537, -115.22, -255.115, 36.278, -27.0537, -234.953, 253.951 )
+
+[sub_resource type="ConvexPolygonShape2D" id=2]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 36.278, -27.0537, 252.122, -40.9003, 235.018, 223, -234.953, 253.951 )
+
+[node name="obstacle_3" type="StaticBody2D"]
+
+input/pickable = false
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+shapes/1/shape = SubResource( 2 )
+shapes/1/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/1/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+script/script = ExtResource( 1 )
+
+[node name="sprite" type="Sprite" parent="."]
+
+texture = ExtResource( 2 )
+
+[node name="collision" type="CollisionPolygon2D" parent="."]
+
+build_mode = 0
+polygon = Vector2Array( -115.22, -255.115, 36.278, -27.0537, 252.122, -40.9003, 235.018, 223, -234.953, 253.951, -253.686, -27.0537 )
+shape_range = Vector2( 0, 1 )
+trigger = false
+
+
