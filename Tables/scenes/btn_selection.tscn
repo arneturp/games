@@ -1,0 +1,50 @@
+[gd_scene load_steps=5 format=1]
+
+[ext_resource path="res://assets/textures/btn_selection_inactive.tex" type="Texture" id=1]
+[ext_resource path="res://assets/textures/btn_selection_active.tex" type="Texture" id=2]
+[ext_resource path="res://scripts/btn_selection.gd" type="Script" id=3]
+[ext_resource path="res://assets/fonts/luckiest_guy_140.fnt" type="BitmapFont" id=4]
+
+[node name="btn_selection" type="TextureButton"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 275.0
+margin/bottom = 263.0
+toggle_mode = true
+click_on_press = true
+enabled_focus_mode = 0
+shortcut = null
+textures/normal = ExtResource( 1 )
+textures/pressed = ExtResource( 2 )
+script/script = ExtResource( 3 )
+value = 0
+
+[node name="lbl" type="Label" parent="."]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 32.0
+margin/top = 43.0
+margin/right = 264.0
+margin/bottom = 248.0
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 0.125686 )
+custom_constants/shadow_offset_x = 2
+custom_constants/shadow_offset_y = 7
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[connection signal="button_down" from="." to="." method="_on_btn_setting_button_down"]
+
+
