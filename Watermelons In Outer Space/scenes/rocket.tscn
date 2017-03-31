@@ -1,0 +1,101 @@
+[gd_scene load_steps=7 format=1]
+
+[ext_resource path="res://scripts/rocket.gd" type="Script" id=1]
+[ext_resource path="res://assets/textures/particle.tex" type="Texture" id=2]
+[ext_resource path="res://assets/textures/rocket.tex" type="Texture" id=3]
+
+[sub_resource type="ConvexPolygonShape2D" id=1]
+
+custom_solver_bias = 0.0
+points = Vector2Array( -34.4752, -41.5814, 0.0816498, -91.3776, 33.5653, -41.5814, 60.6265, 66.7926, -0.201218, 76.6808, -60.8308, 64.8555 )
+
+[sub_resource type="ConvexPolygonShape2D" id=2]
+
+custom_solver_bias = 0.0
+points = Vector2Array( -0.201218, 76.6808, -57.1432, 99.0046, -60.8308, 64.8555 )
+
+[sub_resource type="ConvexPolygonShape2D" id=3]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 60.6265, 66.7926, 56.7408, 98.6811, -0.201218, 76.6808 )
+
+[node name="rocket" type="KinematicBody2D"]
+
+input/pickable = false
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = true
+shapes/1/shape = SubResource( 2 )
+shapes/1/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/1/trigger = true
+shapes/2/shape = SubResource( 3 )
+shapes/2/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/2/trigger = true
+collision/layers = 1
+collision/mask = 1
+collision/margin = 0.08
+script/script = ExtResource( 1 )
+rot_speed = 2.6
+thrust = 500
+max_vel = 400
+friction = 0.65
+
+[node name="particles" type="Particles2D" parent="."]
+
+transform/pos = Vector2( 0, 70 )
+config/amount = 20
+config/lifetime = 2.0
+config/local_space = false
+config/texture = ExtResource( 2 )
+params/direction = 0.0
+params/spread = 20.0
+params/linear_velocity = 50.0
+params/spin_velocity = 0.0
+params/orbit_velocity = 0.0
+params/gravity_direction = 0.0
+params/gravity_strength = 9.8
+params/radial_accel = 0.0
+params/tangential_accel = 0.0
+params/damping = 0.0
+params/initial_angle = 0.0
+params/initial_size = 1.0
+params/final_size = 0.0
+params/hue_variation = 0.0
+params/anim_speed_scale = 1.0
+params/anim_initial_pos = 0.0
+randomness/direction = 0.58
+randomness/spread = 0.33
+randomness/initial_size = 0.29
+
+[node name="sprite" type="Sprite" parent="."]
+
+transform/pos = Vector2( -1, 4 )
+texture = ExtResource( 3 )
+
+[node name="collision_polygon" type="CollisionPolygon2D" parent="."]
+
+build_mode = 0
+polygon = Vector2Array( 0.0816498, -91.3776, 33.5653, -41.5814, 60.6265, 66.7926, 56.7408, 98.6811, -0.201218, 76.6808, -57.1432, 99.0046, -60.8308, 64.8555, -34.4752, -41.5814 )
+shape_range = Vector2( 0, 2 )
+trigger = true
+
+[node name="camera" type="Camera2D" parent="."]
+
+anchor_mode = 1
+rotating = false
+current = true
+zoom = Vector2( 1, 1 )
+limit/left = -10000000
+limit/top = -10000000
+limit/right = 10000000
+limit/bottom = 10000000
+drag_margin/h_enabled = true
+drag_margin/v_enabled = true
+smoothing/enable = false
+smoothing/speed = 5.0
+drag_margin/left = 0.0
+drag_margin/top = 0.0
+drag_margin/right = 0.0
+drag_margin/bottom = 0.0
+
+
