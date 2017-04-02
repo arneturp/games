@@ -1,8 +1,13 @@
-[gd_scene load_steps=7 format=1]
+[gd_scene load_steps=13 format=1]
 
 [ext_resource path="res://scripts/rocket.gd" type="Script" id=1]
 [ext_resource path="res://assets/textures/particle.tex" type="Texture" id=2]
-[ext_resource path="res://assets/textures/rocket.tex" type="Texture" id=3]
+[ext_resource path="res://assets/textures/arrow.tex" type="Texture" id=3]
+[ext_resource path="res://assets/textures/rocket_1.tex" type="Texture" id=4]
+[ext_resource path="res://assets/textures/rocket_2.tex" type="Texture" id=5]
+[ext_resource path="res://assets/textures/rocket_3.tex" type="Texture" id=6]
+[ext_resource path="res://assets/textures/rocket_4.tex" type="Texture" id=7]
+[ext_resource path="res://assets/textures/rocket_5.tex" type="Texture" id=8]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 
@@ -18,6 +23,10 @@ points = Vector2Array( -0.201218, 76.6808, -57.1432, 99.0046, -60.8308, 64.8555 
 
 custom_solver_bias = 0.0
 points = Vector2Array( 60.6265, 66.7926, 56.7408, 98.6811, -0.201218, 76.6808 )
+
+[sub_resource type="SpriteFrames" id=4]
+
+animations = [ { "frames":[ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ) ], "loop":true, "name":"default", "speed":5.0 } ]
 
 [node name="rocket" type="KinematicBody2D"]
 
@@ -42,7 +51,7 @@ friction = 0.65
 
 [node name="particles" type="Particles2D" parent="."]
 
-transform/pos = Vector2( 0, 70 )
+transform/pos = Vector2( 0, 75 )
 config/amount = 20
 config/lifetime = 2.0
 config/local_space = false
@@ -67,18 +76,6 @@ randomness/direction = 0.58
 randomness/spread = 0.33
 randomness/initial_size = 0.29
 
-[node name="sprite" type="Sprite" parent="."]
-
-transform/pos = Vector2( -1, 4 )
-texture = ExtResource( 3 )
-
-[node name="collision_polygon" type="CollisionPolygon2D" parent="."]
-
-build_mode = 0
-polygon = Vector2Array( 0.0816498, -91.3776, 33.5653, -41.5814, 60.6265, 66.7926, 56.7408, 98.6811, -0.201218, 76.6808, -57.1432, 99.0046, -60.8308, 64.8555, -34.4752, -41.5814 )
-shape_range = Vector2( 0, 2 )
-trigger = true
-
 [node name="camera" type="Camera2D" parent="."]
 
 anchor_mode = 1
@@ -97,5 +94,26 @@ drag_margin/left = 0.0
 drag_margin/top = 0.0
 drag_margin/right = 0.0
 drag_margin/bottom = 0.0
+
+[node name="arrow" type="Sprite" parent="."]
+
+transform/pos = Vector2( -0.0132751, -0.145113 )
+z/z = 1
+texture = ExtResource( 3 )
+offset = Vector2( 0.0132751, -169.855 )
+
+[node name="sprite" type="AnimatedSprite" parent="."]
+
+transform/pos = Vector2( 0, -0.270157 )
+frames = SubResource( 4 )
+animation = "default"
+
+[node name="collision_polygon" type="CollisionPolygon2D" parent="sprite"]
+
+transform/pos = Vector2( 0, -75 )
+build_mode = 0
+polygon = Vector2Array( 52.3367, 163.429, 34.7708, 48.3549, 1.07304, -7.21057, -32.9832, 48.7134, -50.1906, 163.071, -0.360901, 136.901 )
+shape_range = Vector2( 0, 2 )
+trigger = true
 
 
