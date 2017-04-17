@@ -21,6 +21,8 @@ func _collect_watermelon( body ):
 	print(body.get_name())
 	if (body.get_name() == "rocket"):
 		print("Watermelon collected!")
+		get_node("/root/globals").save_data.watermelons_collected += 1 
+		get_node("/root/globals").save_game()
 		queue_free()
 		emit_signal("collected")
 		

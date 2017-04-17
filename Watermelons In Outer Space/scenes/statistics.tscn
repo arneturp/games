@@ -96,7 +96,6 @@ stretch_mode = 0
 
 [node name="highscore" type="Node2D" parent="."]
 
-editor/display_folded = true
 transform/pos = Vector2( 110, 1212.9 )
 __meta__ = { "_edit_group_":true }
 
@@ -127,7 +126,7 @@ margin/top = -98.0
 margin/right = 1719.0
 margin/bottom = 14.0
 custom_fonts/font = ExtResource( 3 )
-text = "12"
+text = "0"
 align = 2
 percent_visible = 1.0
 lines_skipped = 0
@@ -148,7 +147,6 @@ stretch_mode = 0
 
 [node name="watermelons_found" type="Node2D" parent="."]
 
-editor/display_folded = true
 transform/pos = Vector2( 110, 1362.9 )
 __meta__ = { "_edit_group_":true }
 
@@ -179,7 +177,7 @@ margin/top = -98.0
 margin/right = 1719.0
 margin/bottom = 14.0
 custom_fonts/font = ExtResource( 3 )
-text = "88"
+text = "0"
 align = 2
 percent_visible = 1.0
 lines_skipped = 0
@@ -200,7 +198,6 @@ stretch_mode = 0
 
 [node name="rounds_played" type="Node2D" parent="."]
 
-editor/display_folded = true
 transform/pos = Vector2( 110, 1522.9 )
 __meta__ = { "_edit_group_":true }
 
@@ -231,7 +228,7 @@ margin/top = -98.0
 margin/right = 1719.0
 margin/bottom = 14.0
 custom_fonts/font = ExtResource( 3 )
-text = "7"
+text = "0"
 align = 2
 percent_visible = 1.0
 lines_skipped = 0
@@ -252,7 +249,6 @@ stretch_mode = 0
 
 [node name="average_per_round" type="Node2D" parent="."]
 
-editor/display_folded = true
 transform/pos = Vector2( 110, 1692.9 )
 __meta__ = { "_edit_group_":true }
 
@@ -283,7 +279,7 @@ margin/top = -98.0
 margin/right = 1719.0
 margin/bottom = 14.0
 custom_fonts/font = ExtResource( 3 )
-text = "11"
+text = "0"
 align = 2
 percent_visible = 1.0
 lines_skipped = 0

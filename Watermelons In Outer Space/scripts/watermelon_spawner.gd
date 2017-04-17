@@ -23,7 +23,6 @@ func spawn_watermelon():
 			
 	new_watermelon.set_pos(random_spawn.get_pos())
 	Globals.set("watermelon_position", new_watermelon.get_global_pos())
-	new_watermelon.connect("exit_tree", self, "watermelon_collected")
 	watermelon_container.add_child(new_watermelon)
 	pass
 

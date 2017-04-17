@@ -10,6 +10,7 @@ onready var btn_selection_6 = get_node("btn_selection_6")
 onready var btn_selection_7 = get_node("btn_selection_7")
 onready var btn_selection_8 = get_node("btn_selection_8")
 onready var btn_selection_9 = get_node("btn_selection_9")
+onready var sample_player = get_node("sample_player")
 
 var btns = null
 
@@ -18,6 +19,7 @@ func _ready():
 	pass
 
 func btn_selection_down():
+	sample_player.play("click")
 	pass
 
 

@@ -20,7 +20,7 @@ func _fixed_process(delta):
 		if (mask.get_pos().x < 502):
 			game_over()
 		else:
-			mask.set_pos(Vector2(mask.get_pos().x - ((870/10) * delta), mask.get_pos().y))
+			mask.set_pos(Vector2(mask.get_pos().x - ((870/60) * delta), mask.get_pos().y))
 	pass
 
 func game_over():

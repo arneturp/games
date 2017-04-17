@@ -29,7 +29,7 @@ func _on_btn_replay_pressed():
 
 
 func _on_btn_twitter_pressed():
-	OS.shell_open("https://twitter.com/intent/tweet?text=I%20just%scored%20" + str(Globals.get("SCORE")) + "%20.")
+	OS.shell_open("https://twitter.com/intent/tweet?text=I+just+played+Party+Popper,+a+fun+HTML5+game.+I+scored+" + str(Globals.get("SCORE")) + "!+And+you?+Play+it+here:+http//turpoint.com/games/partypopper")
 	pass
 
 

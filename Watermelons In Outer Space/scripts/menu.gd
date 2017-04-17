@@ -1,10 +1,16 @@
 extends Node
 
 onready var anim_player = get_node("anim_player")
+onready var melon = get_node("watermelon")
+onready var lbl_score = get_node("watermelon/lbl")
 
 var next_scene = null
 
 func _ready():
+	print("MENU SCENE...")
+	anim_player.play("intro")
+	if (Globals.get("score") != null):
+		lbl_score.set_text(String(Globals.get("score")))
 	pass
 
 func _on_btn_start_game_pressed():
