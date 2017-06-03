@@ -6,10 +6,12 @@ var correct_answer = null
 var allow_input = false
 var timer = null
 var score = 0
+var last_answer = null;
 
 onready var sample_player = get_node("sample_player")
 onready var lbl_question = get_node("lbl_question")
 onready var lbl_score = get_node("lbl_score")
+onready var lbl_highscore = get_node("lbl_highscore")
 onready var btn_answer_1 = get_node("answer_1")
 onready var btn_answer_2 = get_node("answer_2")
 onready var btn_answer_3 = get_node("answer_3")
@@ -28,6 +30,9 @@ func _ready():
 	timer = Timer.new()
 	timer.connect("timeout", self, "_on_timer_timeout") 
 	add_child(timer) #to process
+	
+	# Set highscore
+	lbl_highscore.set_text("Best:" + str(get_node("/root/globals").get_highscore()))
 	pass
 
 
@@ -35,17 +40,24 @@ func generate_table():
 	var number_1 = possible_tables[randi() % possible_tables.size()]
 	var number_2 = randi() % 11
 	correct_answer = number_1 * number_2
-	lbl_question.set_text(str(number_1) + " x " + str(number_2))
-	generate_answers();
 	
-	# Adding answers to screen
-	btn_answer_1.set_value(answers[0])
-	btn_answer_2.set_value(answers[1])
-	btn_answer_3.set_value(answers[2])
-	btn_answer_4.set_value(answers[3])
+	if (correct_answer == last_answer):
+		generate_table()
+	else:
+		lbl_question.set_text(str(number_1) + " x " + str(number_2))
+		generate_answers();
+		
+		# Adding answers to screen
+		btn_answer_1.set_value(answers[0])
+		btn_answer_2.set_value(answers[1])
+		btn_answer_3.set_value(answers[2])
+		btn_answer_4.set_value(answers[3])
+		
+		# Allow input
+		allow_input = true
+		last_answer = correct_answer
 	
-	# Allow input
-	allow_input = true
+	
 	pass
 
 func generate_answers():
@@ -112,9 +124,11 @@ func correct_answer():
 	Globals.set("ANSWERS_CORRECT", Globals.get("ANSWERS_CORRECT") + 1)
 	pass
 
+
 func wrong_answer():
 	sample_player.play("wrong_answer")
-	Globals.set("SCORE", Globals.get("SCORE") - 1)
+	if (Globals.get("SCORE") > 0):
+		Globals.set("SCORE", Globals.get("SCORE") - 1)
 	lbl_score.set_text("Score: " + str(Globals.get("SCORE")))
 	Globals.set("ANSWERS_WRONG", Globals.get("ANSWERS_WRONG") + 1)
 	pass

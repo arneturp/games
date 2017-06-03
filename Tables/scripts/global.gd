@@ -9,6 +9,8 @@ var save_data = {"highscore": 0} #variable to store data
 
 func _ready():
 	current_scene = get_tree().get_root().get_child(get_tree().get_root().get_child_count() -1)
+	if not savegame.file_exists(save_path):
+    	create_save()
 	pass
 
 func set_scene(scene):

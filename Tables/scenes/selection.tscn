@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=1]
+[gd_scene load_steps=16 format=1]
 
 [ext_resource path="res://scripts/selection.gd" type="Script" id=1]
 [ext_resource path="res://assets/textures/background.tex" type="Texture" id=2]
@@ -10,22 +10,30 @@
 [ext_resource path="res://scenes/btn_selection.tscn" type="PackedScene" id=8]
 [ext_resource path="res://assets/sounds/click.smp" type="Sample" id=9]
 [ext_resource path="res://assets/sounds/deactivate_button.smp" type="Sample" id=10]
+[ext_resource path="res://assets/fonts/luckiest_guy.ttf" type="DynamicFontData" id=11]
 
 [sub_resource type="SampleLibrary" id=1]
 
-samples/click = { "db":0.0, "pitch":1.0, "sample":ExtResource( 9 ) }
-samples/deactivate_button = { "db":-10.0, "pitch":1.0, "sample":ExtResource( 10 ) }
+samples/click = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 9 )
+}
+samples/deactivate_button = {
+"db": -10.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 10 )
+}
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="DynamicFont" id=2]
 
-length = 1.0
-loop = false
-step = 0.1
-tracks/0/type = "value"
-tracks/0/path = NodePath("panel_selection:rect/pos")
-tracks/0/interp = 1
-tracks/0/imported = false
-tracks/0/keys = { "times":FloatArray( 0, 0.5, 0.7 ), "transitions":FloatArray( 1, -4, 1 ), "update":0, "values":[ Vector2( 0, -1950 ), Vector2( 0, -24 ), Vector2( 0, -53 ) ] }
+font/size = 88
+extra_spacing/space = 18
+font/use_mipmaps = false
+font/use_filter = true
+font/font = ExtResource( 11 )
 
 [sub_resource type="Animation" id=3]
 
@@ -36,12 +44,40 @@ tracks/0/type = "value"
 tracks/0/path = NodePath("panel_selection:rect/pos")
 tracks/0/interp = 1
 tracks/0/imported = false
-tracks/0/keys = { "times":FloatArray( 0, 0.4 ), "transitions":FloatArray( 4, 1 ), "update":0, "values":[ Vector2( 0, -53 ), Vector2( 0, -2010 ) ] }
+tracks/0/keys = {
+"times": FloatArray( 0.1, 0.6, 0.8 ),
+"transitions": FloatArray( 1, -4, 1 ),
+"update": 0,
+"values": [ Vector2( 0, -1950 ), Vector2( 0, -24 ), Vector2( 0, -53 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+
+length = 1.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("panel_selection:rect/pos")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = {
+"times": FloatArray( 0, 0.4 ),
+"transitions": FloatArray( 4, 1 ),
+"update": 0,
+"values": [ Vector2( 0, -53 ), Vector2( 0, -2010 ) ]
+}
 tracks/1/type = "method"
 tracks/1/path = NodePath(".")
 tracks/1/interp = 1
 tracks/1/imported = false
-tracks/1/keys = { "times":FloatArray( 0.7 ), "transitions":FloatArray( 1 ), "values":[ { "args":[  ], "method":"end_of_outro" } ] }
+tracks/1/keys = {
+"times": FloatArray( 0.7 ),
+"transitions": FloatArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "end_of_outro"
+} ]
+}
 
 [node name="selection" type="Node"]
 
@@ -90,6 +126,8 @@ shortcut = null
 textures/normal = ExtResource( 5 )
 textures/pressed = ExtResource( 6 )
 textures/disabled = ExtResource( 7 )
+params/resize_mode = 0
+params/stretch_mode = 0
 
 [node name="btn_selection_1" parent="panel_selection" instance=ExtResource( 8 )]
 
@@ -97,6 +135,8 @@ margin/left = 115.0
 margin/top = 783.0
 margin/right = 407.0
 margin/bottom = 1066.0
+params/resize_mode = 0
+params/stretch_mode = 0
 value = 1
 
 [node name="btn_selection_2" parent="panel_selection" instance=ExtResource( 8 )]
@@ -105,6 +145,8 @@ margin/left = 399.0
 margin/top = 783.0
 margin/right = 691.0
 margin/bottom = 1066.0
+params/resize_mode = 0
+params/stretch_mode = 0
 value = 2
 
 [node name="btn_selection_3" parent="panel_selection" instance=ExtResource( 8 )]
@@ -113,6 +155,8 @@ margin/left = 680.0
 margin/top = 783.0
 margin/right = 972.0
 margin/bottom = 1066.0
+params/resize_mode = 0
+params/stretch_mode = 0
 value = 3
 
 [node name="btn_selection_4" parent="panel_selection" instance=ExtResource( 8 )]
@@ -121,6 +165,8 @@ margin/left = 115.0
 margin/top = 1067.0
 margin/right = 407.0
 margin/bottom = 1350.0
+params/resize_mode = 0
+params/stretch_mode = 0
 value = 4
 
 [node name="btn_selection_5" parent="panel_selection" instance=ExtResource( 8 )]
@@ -129,6 +175,8 @@ margin/left = 399.0
 margin/top = 1067.0
 margin/right = 691.0
 margin/bottom = 1350.0
+params/resize_mode = 0
+params/stretch_mode = 0
 value = 5
 
 [node name="btn_selection_6" parent="panel_selection" instance=ExtResource( 8 )]
@@ -137,6 +185,8 @@ margin/left = 680.0
 margin/top = 1067.0
 margin/right = 972.0
 margin/bottom = 1350.0
+params/resize_mode = 0
+params/stretch_mode = 0
 value = 6
 
 [node name="btn_selection_7" parent="panel_selection" instance=ExtResource( 8 )]
@@ -145,6 +195,8 @@ margin/left = 115.0
 margin/top = 1349.0
 margin/right = 407.0
 margin/bottom = 1632.0
+params/resize_mode = 0
+params/stretch_mode = 0
 value = 7
 
 [node name="btn_selection_8" parent="panel_selection" instance=ExtResource( 8 )]
@@ -153,6 +205,8 @@ margin/left = 399.0
 margin/top = 1349.0
 margin/right = 691.0
 margin/bottom = 1632.0
+params/resize_mode = 0
+params/stretch_mode = 0
 value = 8
 
 [node name="btn_selection_9" parent="panel_selection" instance=ExtResource( 8 )]
@@ -161,6 +215,8 @@ margin/left = 680.0
 margin/top = 1349.0
 margin/right = 972.0
 margin/bottom = 1632.0
+params/resize_mode = 0
+params/stretch_mode = 0
 value = 9
 
 [node name="sample_player" type="SamplePlayer" parent="panel_selection"]
@@ -180,19 +236,38 @@ default/reverb_room = 2
 default/reverb_send = 0.0
 default/chorus_send = 0.0
 
+[node name="Label" type="Label" parent="panel_selection"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 22.0
+margin/top = 384.0
+margin/right = 1053.0
+margin/bottom = 707.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.4, 0.4, 0.4, 1 )
+custom_constants/line_spacing = 33
+text = "Which would you
+like to practice?"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
 [node name="anim_player" type="AnimationPlayer" parent="."]
 
 playback/process_mode = 1
 playback/default_blend_time = 0.0
 root/root = NodePath("..")
-anims/intro = SubResource( 2 )
-anims/outro = SubResource( 3 )
+anims/intro = SubResource( 3 )
+anims/outro = SubResource( 4 )
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
 autoplay = "intro"
-
-[connection signal="pressed" from="panel_selection/btn_play" to="." method="_on_btn_play_pressed"]
 
 [connection signal="pressed" from="panel_selection/btn_play" to="panel_selection" method="_on_btn_play_pressed"]
 

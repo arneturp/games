@@ -10,7 +10,7 @@ func _ready():
 
 func fill_out_labels():
 	lbl_score.set_text(str(Globals.get("SCORE")))
-	lbl_highscore.set_text(str(Globals.get("SCORE")))
+	lbl_highscore.set_text(str(get_node("/root/globals").get_highscore()))
 	lbl_correct.set_text(str(Globals.get("ANSWERS_CORRECT")))
 	lbl_wrong.set_text(str(Globals.get("ANSWERS_WRONG")))
 	pass

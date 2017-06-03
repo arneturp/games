@@ -32,9 +32,24 @@
 
 [sub_resource type="SampleLibrary" id=1]
 
-samples/correct_answer = { "db":0.0, "pitch":1.0, "sample":ExtResource( 8 ) }
-samples/success = { "db":0.0, "pitch":1.0, "sample":ExtResource( 9 ) }
-samples/wrong_answer = { "db":0.0, "pitch":1.0, "sample":ExtResource( 10 ) }
+samples/correct_answer = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 8 )
+}
+samples/success = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 9 )
+}
+samples/wrong_answer = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 10 )
+}
 
 [sub_resource type="Animation" id=2]
 
@@ -45,17 +60,32 @@ tracks/0/type = "value"
 tracks/0/path = NodePath("game_over_panel:rect/pos")
 tracks/0/interp = 1
 tracks/0/imported = false
-tracks/0/keys = { "times":FloatArray( 0, 0.1 ), "transitions":FloatArray( 1, 1 ), "update":0, "values":[ Vector2( 1108, 0 ), Vector2( 0, 0 ) ] }
+tracks/0/keys = {
+"times": FloatArray( 0, 0.1 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1108, 0 ), Vector2( 0, 0 ) ]
+}
 tracks/1/type = "value"
 tracks/1/path = NodePath("game_over_panel:visibility/opacity")
 tracks/1/interp = 1
 tracks/1/imported = false
-tracks/1/keys = { "times":FloatArray( 0.1, 0.6 ), "transitions":FloatArray( 1, 1 ), "update":0, "values":[ 0.0, 1.0 ] }
+tracks/1/keys = {
+"times": FloatArray( 0.1, 0.6 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
 tracks/2/type = "value"
 tracks/2/path = NodePath("game_over_panel/panel:rect/pos")
 tracks/2/interp = 1
 tracks/2/imported = false
-tracks/2/keys = { "times":FloatArray( 0.6, 0.9, 1 ), "transitions":FloatArray( 1, 4, 1 ), "update":0, "values":[ Vector2( 1101, 429 ), Vector2( 111, 429 ), Vector2( 151, 429 ) ] }
+tracks/2/keys = {
+"times": FloatArray( 0.6, 0.9, 1 ),
+"transitions": FloatArray( 1, 4, 1 ),
+"update": 0,
+"values": [ Vector2( 1101, 429 ), Vector2( 111, 429 ), Vector2( 151, 429 ) ]
+}
 
 [sub_resource type="Animation" id=3]
 
@@ -66,12 +96,22 @@ tracks/0/type = "value"
 tracks/0/path = NodePath("timer:rect/pos")
 tracks/0/interp = 1
 tracks/0/imported = false
-tracks/0/keys = { "times":FloatArray( 0.6, 0.9 ), "transitions":FloatArray( 1, 0.25 ), "update":0, "values":[ Vector2( 0, -163 ), Vector2( 0, 0 ) ] }
+tracks/0/keys = {
+"times": FloatArray( 0.6, 0.9 ),
+"transitions": FloatArray( 1, 0.25 ),
+"update": 0,
+"values": [ Vector2( 0, -163 ), Vector2( 0, 0 ) ]
+}
 tracks/1/type = "value"
 tracks/1/path = NodePath("panel_quiz:rect/pos")
 tracks/1/interp = 1
 tracks/1/imported = false
-tracks/1/keys = { "times":FloatArray( 0, 0.7 ), "transitions":FloatArray( -4, -4 ), "update":0, "values":[ Vector2( 21, -2018 ), Vector2( 21, -124 ) ] }
+tracks/1/keys = {
+"times": FloatArray( 0, 0.7 ),
+"transitions": FloatArray( -4, -4 ),
+"update": 0,
+"values": [ Vector2( 21, -2018 ), Vector2( 21, -124 ) ]
+}
 
 [sub_resource type="Animation" id=4]
 
@@ -83,17 +123,32 @@ tracks/0/type = "value"
 tracks/0/path = NodePath("game_over_panel/medal:visibility/opacity")
 tracks/0/interp = 1
 tracks/0/imported = false
-tracks/0/keys = { "times":FloatArray( 0, 0.3 ), "transitions":FloatArray( 1, 1 ), "update":0, "values":[ 0.0, 1.0 ] }
+tracks/0/keys = {
+"times": FloatArray( 0, 0.3 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
 tracks/1/type = "value"
 tracks/1/path = NodePath("game_over_panel/medal:transform/scale")
 tracks/1/interp = 1
 tracks/1/imported = false
-tracks/1/keys = { "times":FloatArray( 0, 0.3 ), "transitions":FloatArray( 1, 1 ), "update":0, "values":[ Vector2( 3, 3 ), Vector2( 1, 1 ) ] }
+tracks/1/keys = {
+"times": FloatArray( 0, 0.3 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 3, 3 ), Vector2( 1, 1 ) ]
+}
 tracks/2/type = "value"
 tracks/2/path = NodePath("panel_quiz/sample_player:play/play")
 tracks/2/interp = 1
 tracks/2/imported = false
-tracks/2/keys = { "times":FloatArray( 0.1 ), "transitions":FloatArray( 1 ), "update":2, "values":[ "success" ] }
+tracks/2/keys = {
+"times": FloatArray( 0.1 ),
+"transitions": FloatArray( 1 ),
+"update": 2,
+"values": [ "success" ]
+}
 
 [sub_resource type="Animation" id=5]
 
@@ -104,17 +159,34 @@ tracks/0/type = "value"
 tracks/0/path = NodePath("timer:rect/pos")
 tracks/0/interp = 1
 tracks/0/imported = false
-tracks/0/keys = { "times":FloatArray( 0.3, 0.5 ), "transitions":FloatArray( 4, 4 ), "update":0, "values":[ Vector2( 0, 0 ), Vector2( 0, -180 ) ] }
+tracks/0/keys = {
+"times": FloatArray( 0.3, 0.5 ),
+"transitions": FloatArray( 4, 4 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, -180 ) ]
+}
 tracks/1/type = "value"
 tracks/1/path = NodePath("panel_quiz:rect/pos")
 tracks/1/interp = 1
 tracks/1/imported = false
-tracks/1/keys = { "times":FloatArray( 0.1, 0.7 ), "transitions":FloatArray( 4, 4 ), "update":0, "values":[ Vector2( 21, -124 ), Vector2( 21, -2014 ) ] }
+tracks/1/keys = {
+"times": FloatArray( 0.1, 0.7 ),
+"transitions": FloatArray( 4, 4 ),
+"update": 0,
+"values": [ Vector2( 21, -124 ), Vector2( 21, -2014 ) ]
+}
 tracks/2/type = "method"
 tracks/2/path = NodePath(".")
 tracks/2/interp = 1
 tracks/2/imported = false
-tracks/2/keys = { "times":FloatArray( 0.9 ), "transitions":FloatArray( 1 ), "values":[ { "args":[  ], "method":"end_of_outro" } ] }
+tracks/2/keys = {
+"times": FloatArray( 0.9 ),
+"transitions": FloatArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "end_of_outro"
+} ]
+}
 
 [sub_resource type="Animation" id=6]
 
@@ -125,27 +197,54 @@ tracks/0/type = "value"
 tracks/0/path = NodePath("game_over_panel/panel:rect/pos")
 tracks/0/interp = 1
 tracks/0/imported = false
-tracks/0/keys = { "times":FloatArray( 0.1, 0.5 ), "transitions":FloatArray( 4, 4 ), "update":0, "values":[ Vector2( 151, 429 ), Vector2( 1121, 429 ) ] }
+tracks/0/keys = {
+"times": FloatArray( 0.1, 0.5 ),
+"transitions": FloatArray( 4, 4 ),
+"update": 0,
+"values": [ Vector2( 151, 429 ), Vector2( 1121, 429 ) ]
+}
 tracks/1/type = "value"
 tracks/1/path = NodePath("game_over_panel/overlay:visibility/opacity")
 tracks/1/interp = 1
 tracks/1/imported = false
-tracks/1/keys = { "times":FloatArray( 0.2, 0.4 ), "transitions":FloatArray( 4, 4 ), "update":0, "values":[ 1.0, 0.0 ] }
+tracks/1/keys = {
+"times": FloatArray( 0.2, 0.4 ),
+"transitions": FloatArray( 4, 4 ),
+"update": 0,
+"values": [ 1.0, 0.0 ]
+}
 tracks/2/type = "value"
 tracks/2/path = NodePath("timer:rect/pos")
 tracks/2/interp = 1
 tracks/2/imported = false
-tracks/2/keys = { "times":FloatArray( 0.3, 0.5 ), "transitions":FloatArray( 4, 4 ), "update":0, "values":[ Vector2( 0, 0 ), Vector2( 0, -180 ) ] }
+tracks/2/keys = {
+"times": FloatArray( 0.3, 0.5 ),
+"transitions": FloatArray( 4, 4 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, -180 ) ]
+}
 tracks/3/type = "value"
 tracks/3/path = NodePath("panel_quiz:rect/pos")
 tracks/3/interp = 1
 tracks/3/imported = false
-tracks/3/keys = { "times":FloatArray( 0.1, 0.7 ), "transitions":FloatArray( 4, 4 ), "update":0, "values":[ Vector2( 21, -124 ), Vector2( 21, -2014 ) ] }
+tracks/3/keys = {
+"times": FloatArray( 0.1, 0.7 ),
+"transitions": FloatArray( 4, 4 ),
+"update": 0,
+"values": [ Vector2( 21, -124 ), Vector2( 21, -2014 ) ]
+}
 tracks/4/type = "method"
 tracks/4/path = NodePath(".")
 tracks/4/interp = 1
 tracks/4/imported = false
-tracks/4/keys = { "times":FloatArray( 0.9 ), "transitions":FloatArray( 1 ), "values":[ { "args":[  ], "method":"end_of_outro" } ] }
+tracks/4/keys = {
+"times": FloatArray( 0.9 ),
+"transitions": FloatArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "end_of_outro"
+} ]
+}
 
 [node name="game" type="Node"]
 
@@ -177,7 +276,9 @@ margin/bottom = -19.0
 texture = ExtResource( 3 )
 stretch_mode = 0
 script/script = ExtResource( 4 )
-__meta__ = { "_edit_group_":true }
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="lbl_question" type="Label" parent="panel_quiz"]
 
@@ -204,6 +305,8 @@ margin/left = 19.0
 margin/top = -344.0
 margin/right = -444.0
 margin/bottom = 2279.0
+params/resize_mode = 0
+params/stretch_mode = 0
 
 [node name="answer_2" parent="panel_quiz" instance=ExtResource( 6 )]
 
@@ -211,6 +314,8 @@ margin/left = 429.0
 margin/top = -344.0
 margin/right = -34.0
 margin/bottom = 2279.0
+params/resize_mode = 0
+params/stretch_mode = 0
 
 [node name="answer_3" parent="panel_quiz" instance=ExtResource( 6 )]
 
@@ -218,6 +323,8 @@ margin/left = 19.0
 margin/top = 47.0
 margin/right = -444.0
 margin/bottom = 2670.0
+params/resize_mode = 0
+params/stretch_mode = 0
 
 [node name="answer_4" parent="panel_quiz" instance=ExtResource( 6 )]
 
@@ -225,6 +332,8 @@ margin/left = 429.0
 margin/top = 47.0
 margin/right = -34.0
 margin/bottom = 2670.0
+params/resize_mode = 0
+params/stretch_mode = 0
 
 [node name="lbl_score" type="Label" parent="panel_quiz"]
 
@@ -262,7 +371,7 @@ custom_fonts/font = ExtResource( 7 )
 custom_colors/font_color = Color( 0.4, 0.223529, 0.145098, 1 )
 custom_colors/font_color_shadow = Color( 0.729412, 0.533333, 0.454902, 1 )
 custom_constants/shadow_offset_y = 5
-text = "Best: 13"
+text = "Best: 0"
 align = 2
 valign = 1
 percent_visible = 1.0
@@ -325,6 +434,8 @@ enabled_focus_mode = 2
 shortcut = null
 textures/normal = ExtResource( 13 )
 textures/pressed = ExtResource( 14 )
+params/resize_mode = 0
+params/stretch_mode = 0
 
 [node name="mask" type="Light2D" parent="timer"]
 
@@ -354,6 +465,7 @@ shadow/item_mask = 2
 transform/pos = Vector2( -479.776, 2.7832 )
 config/amount = 5
 config/lifetime = 2.0
+config/process_mode = 1
 config/local_space = false
 config/texture = ExtResource( 16 )
 params/direction = 0.0
@@ -435,6 +547,8 @@ enabled_focus_mode = 2
 shortcut = null
 textures/normal = ExtResource( 21 )
 textures/pressed = ExtResource( 22 )
+params/resize_mode = 0
+params/stretch_mode = 0
 
 [node name="btn_twitter" type="TextureButton" parent="game_over_panel/panel"]
 
@@ -451,6 +565,8 @@ enabled_focus_mode = 2
 shortcut = null
 textures/normal = ExtResource( 23 )
 textures/pressed = ExtResource( 24 )
+params/resize_mode = 0
+params/stretch_mode = 0
 
 [node name="btn_menu" type="TextureButton" parent="game_over_panel/panel"]
 
@@ -467,6 +583,8 @@ enabled_focus_mode = 2
 shortcut = null
 textures/normal = ExtResource( 25 )
 textures/pressed = ExtResource( 26 )
+params/resize_mode = 0
+params/stretch_mode = 0
 
 [node name="lbl_score" type="Label" parent="game_over_panel/panel"]
 
@@ -618,7 +736,6 @@ anims/intro = SubResource( 3 )
 anims/new_highscore = SubResource( 4 )
 anims/outro = SubResource( 5 )
 anims/outro_with_game_over = SubResource( 6 )
-next/outro = ""
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]

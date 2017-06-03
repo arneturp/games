@@ -13,6 +13,8 @@ func _ready():
 
 func _timer_stopped():
 	get_tree().set_pause(true)
+	if (Globals.get('SCORE') > get_node("/root/globals").get_highscore()):
+		get_node("/root/globals").save_highscore(Globals.get('SCORE'))
 	game_over_panel.fill_out_labels()
 	anim_player.play("game_over")
 	pass
@@ -29,7 +31,7 @@ func _on_btn_replay_pressed():
 
 
 func _on_btn_twitter_pressed():
-	OS.shell_open("https://twitter.com/intent/tweet?text=I+just+played+Party+Popper,+a+fun+HTML5+game.+I+scored+" + str(Globals.get("SCORE")) + "!+And+you?+Play+it+here:+http//turpoint.com/games/partypopper")
+	OS.shell_open("https://twitter.com/intent/tweet?text=I+just+played+Tables,+a+fun+educational+game.+I+scored+" + str(Globals.get("SCORE")) + "!+And+you?+Get+it+here:+http//turpoint.com/games/tables")
 	pass
 
 
@@ -42,4 +44,7 @@ func _on_btn_menu_pressed():
 func _on_btn_quit_pressed():
 	anim_player.play("outro")
 	pending_scn = "res://scenes/menu.tscn"
+	pass
+
+func render_highscore():
 	pass

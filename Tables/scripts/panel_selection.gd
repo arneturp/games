@@ -1,5 +1,6 @@
 extends TextureFrame
 
+var active_tables = []
 onready var btn_play = get_node("btn_play")
 onready var btn_selection_1 = get_node("btn_selection_1")
 onready var btn_selection_2 = get_node("btn_selection_2")
@@ -24,11 +25,12 @@ func btn_selection_down():
 
 
 func _on_btn_play_pressed():
-	var active_tables = []
+	active_tables = []
 	for btn in btns:
 		if btn.is_pressed():
 			active_tables.push_back(btn.value)
-	
-	Globals.set("ENABLED_TABLES", active_tables)
+	if (active_tables != []):
+		Globals.set("ENABLED_TABLES", active_tables)
+		get_node("..").go_to_next_scene()
 	
 	pass
